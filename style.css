@@ -1,3 +1,157 @@
+html,
 body {
-    color: red;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main {
+  position: relative;
+  background: url("images/snow.png");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+.content-left {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.info-img {
+  padding: 2rem 2rem 4rem 8rem;
+}
+
+.content-left-info {
+  padding: 4rem 2rem 6rem 8rem;
+  margin-top: auto;
+  display: flex;
+}
+.content-left-info .degree {
+  font-size: 9rem;
+}
+
+.content-left-info .location {
+  display: flex;
+  font-size: 4rem;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+.content-left-info .location-date {
+  font-size: 1.5rem;
+}
+
+
+.content-right {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  color: #f1f1f1;
+  width: 600px;
+  padding-left: 2rem;    
+  border-left: 5px;
+}
+
+.content-right .container-one {
+  padding: 2rem 2rem 4rem 8rem;
+  padding-left: 0.1rem;
+  color: rgb(255, 255, 255, 0.7);
+  display: flex;
+  margin: 0.1rem;
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.search-bar input{
+  background: transparent;
+  padding: 3px;
+  padding-left: 0rem;
+  border-bottom: 1px solid white;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+}
+.search-bar button img {
+  display: flex;
+  padding-left: 8rem;
+  padding-top: 1px;
+}
+
+.search-bar button {
+  display: flex;
+  padding-right: 0.5rem;
+  padding-top: 2rem;
+  border: 0;
+  border-radius: 50%;
+  width:60px;
+  height: 60px;
+  background: transparent;
+  text-align: right;
+}
+
+.content-right .weather-details {
+  display: flex;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+
+.content-right .weather-info {
+  display: flex;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+ 
+}
+
+.content-right .image-weather {
+  display: flex;
+  font-size: 1rem;
+  padding-left: 19rem;
+  padding-bottom: 0.1rem;
+  margin-top: 0;
+}
+
+.content-right .horizontal-line-two {
+  margin-top: 3rem;
+  width: 80%;
+}
+
+.content-right .forecast {
+  margin-top: 2.5rem;
+}
+
+.content-right .time {
+  display: flex;
+  font-size: 1rem;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+hr {
+  width: 100%;
+  color: rgba(255, 255, 255, 1);
 }
