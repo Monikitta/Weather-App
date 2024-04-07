@@ -6,55 +6,91 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>  
+<body>   
   <main>
-    <div class="content-left">
-      <div class="info-img">
+    <div class="left-container">
+      <div class="logo">
         <img src="images/logo.png">
       </div>
-    
-      <div class="content-left-info">
-        <span class="degree">16°</span>
-        <div class="location">
-          <span class="location-name">London</span>
-          <span class="location-date">06:09 - Monday, 9 Sep '23 <img src="images/cloudy.png"></span>
-        
+
+      <div class="info-block-container">
+        <div class="info-left">
+          <p class="degree">16°</p>
+          <div class="town-date">
+            <p class="town">London</p>
+            <p class="date">06:09 - Monday, 9 Sep '23</p>
+          </div>
+          <img class="image-cloud" src="images/Cloudy.svg">
         </div>
       </div>
     </div>
 
-    <div class="content-right">
+    <div class="right-container">
 
-      <div class="container-one">
-        <form class="search-bar" >
-          <input type="text" placeholder="Search Location...">
-          <button type="submit"><img src="images/fa_search.png"></button>
-        </form>
+      <div class="search-bar">
+        <input type="text" class="input-button" placeholder="Search Location..."> 
+        <img src="images/fa_search.png" class="search-icon" alt="Search">
       </div>
-      
 
-      <div class="weather-details">Weather Details...</div>
-      <div class="weather-info">THUNDERSTORM WITH LIGHT DRIZZLE</div>
 
-      <div class="weather-info">Team max&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 19° &emsp;<img src="images/temp-max.png"></div>
-      <div class="weather-info">Temp min&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  15°&emsp;<img src="images/temp-min.png"></div>
-      <div class="weather-info">Humadity&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 58%&emsp; <img src="images/humadity.png"></div>
-      <div class="weather-info">Cloudy&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 86%&emsp; <img src="images/cloudy.png"></div>
-      <div class="weather-info">Wind&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  5km/h&emsp; <img src="images/wind.png"></div>
-     
-      <div class="horizontal-line-two"><hr></div>
-      
-      <div class="forecast">Today's Weather Forecast...</div>
+      <p class="weather-details">Weather Details...</p>
 
-      <div class="forcast-info">
-        <span class="forcast-image"><img src="images/snowhite.png"></span>
-        <div class="time">
-        <span>09:00&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;19°</span>
-        <span>Snow</span> 
-       </div>
+      <div class="weather-container">
+        <p class="large-text">THUNDERSTORM WITH LIGHT DRIZZLE</p>
+
+          <div class="weather-info">
+            <p class="small-text">Temp max</p>
+            <div class="degree-img">
+              <p class="info-style">19°</p>
+              <img class="weather-images" src="images/temp max.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Temp min</p>
+            <div class="degree-img">
+              <p class="info-style">15°</p>
+              <img class="weather-images" src="images/temp-min.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Humadity</p>
+            <div class="degree-img">
+              <p class="info-style">58%</p>
+              <img class="weather-images" src="images/humadity.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Cloudy</p>
+            <div class="degree-img">
+              <p class="info-style">86%</p>
+              <img class="weather-images" src="images/small-cloudy.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Wind</p>
+            <div class="degree-img">
+              <p class="info-style">5km/h</p>
+              <img class="weather-images" src="images/wind.svg">
+            </div>
+          </div>
+
+      </div>
+
+      <p class="weather-details">Today's Weather Forecast...</p>
+
+      <div class="forecast">
+        <div class="forecast-info">
+          <img src="images/Snowhite.svg">
+          <div class="forecast-time">
+            <p class="info-style">09:00</p>
+            <p class="small-text">Snow</p>
+          </div>
+        </div>
+        <p class="forecast-degree">19°</p>
       </div>
 
     </div>
-  </div>
+
+  </main>
 </body>
 </html>
