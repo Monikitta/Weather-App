@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body>   
+  <main>
+    <div class="left-container">
+      <div class="logo">
+        <img src="images/logo.png">
+      </div>
 
-<body>
-Hello world!
+      <div class="info-block-container">
+        <div class="info-left">
+          <p class="degree">16°</p>
+          <div class="town-date">
+            <p class="town">London</p>
+            <p class="date">06:09 - Monday, 9 Sep '23</p>
+          </div>
+          <img class="image-cloud" src="images/Cloudy.svg">
+        </div>
+      </div>
+    </div>
+
+    <div class="right-container">
+
+      <div class="search-bar">
+        <input type="text" class="input-button" placeholder="Search Location..."> 
+        <img src="images/fa_search.png" class="search-icon" alt="Search">
+      </div>
+
+
+      <p class="weather-details">Weather Details...</p>
+
+      <div class="weather-container">
+        <p class="large-text">THUNDERSTORM WITH LIGHT DRIZZLE</p>
+
+          <div class="weather-info">
+            <p class="small-text">Temp max</p>
+            <div class="degree-img">
+              <p class="info-style">19°</p>
+              <img class="weather-images" src="images/temp max.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Temp min</p>
+            <div class="degree-img">
+              <p class="info-style">15°</p>
+              <img class="weather-images" src="images/temp-min.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Humadity</p>
+            <div class="degree-img">
+              <p class="info-style">58%</p>
+              <img class="weather-images" src="images/humadity.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Cloudy</p>
+            <div class="degree-img">
+              <p class="info-style">86%</p>
+              <img class="weather-images" src="images/small-cloudy.svg">
+            </div>
+          </div>
+          <div class="weather-info">
+            <p class="small-text">Wind</p>
+            <div class="degree-img">
+              <p class="info-style">5km/h</p>
+              <img class="weather-images" src="images/wind.svg">
+            </div>
+          </div>
+
+      </div>
+
+      <p class="weather-details">Today's Weather Forecast...</p>
+
+      <div class="forecast">
+        <div class="forecast-info">
+          <img src="images/Snowhite.svg">
+          <div class="forecast-time">
+            <p class="info-style">09:00</p>
+            <p class="small-text">Snow</p>
+          </div>
+        </div>
+        <p class="forecast-degree">19°</p>
+      </div>
+
+    </div>
+
+  </main>
 </body>
-
 </html>
