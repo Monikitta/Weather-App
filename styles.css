@@ -126,6 +126,15 @@ main {
   -webkit-text-stroke: 1px #000000;
 }
 
+input[type="text"] {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24.44px;
+  color:rgba(255, 255, 255, 0.7);
+  padding-bottom: 3rem;
+  outline: none;
+}
+
 .weather-details {
   margin-top: 41px;
   top: 132px;

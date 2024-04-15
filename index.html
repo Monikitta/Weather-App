@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <script>
+
+    async function getWeather(params) {
+
+      const apiKey = '12b1eb481bae9424d0d8f352708b1f64';
+      const currentCity = document.getElementById("town");
+      const currentTemp = document.getElementById("degree");
+      const currentTempMax = document.getElementById("tempMax");
+      const currentTempMin = document.getElementById("tempMin");
+      const currentHumidity = document.getElementById("humadity");
+      const currentClouds = document.getElementById("cloudy");
+      const currentWind = document.getElementById("wind");
+      const currentDescription = document.getElementById("forecast-text");
+      const currentWeatherIcon = document.getElementById("forecast-icon");
+      const currentforecastDegree = document.getElementById("forecast-degree");
+      const currentLargeIcon = document.getElementById("large-icon");
+
+      try {
+        const city = document.getElementById('cityInput').value.trim();
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        const data = await response.json();
+      
+
+        const cityName = data.name;
+        const cityTemp = data.main.temp;
+        const cityTempMax = data.main.temp_max;
+        const cityTempMin = data.main.temp_min;
+        const cityHumidity = data.main.humidity;
+        const cityClouds = data.clouds.all;
+        const cityWind = data.wind.speed;
+        const weatherDescription = data.weather[0].main;
+        const weatherIconCode = data.weather[0].icon;
+
+        currentCity.textContent = cityName;
+        currentTemp.textContent = `${cityTemp}°`;
+        currentTempMax.textContent = `${cityTempMax}°`;
+        currentTempMin.textContent = `${cityTempMin}°`;
+        currentHumidity.textContent = `${cityHumidity}%`;
+        currentClouds.textContent = `${cityClouds}%`;
+        currentWind.textContent = `${cityWind}km/h`
+        currentDescription.textContent = `${weatherDescription}`;
+        currentWeatherIcon.src = `http://openweathermap.org/img/wn/${weatherIconCode}.png`;
+        currentforecastDegree.textContent = `${cityTemp}°`;
+        currentLargeIcon.src = `http://openweathermap.org/img/wn/${weatherIconCode}.png`;
+
+      } catch (error) {
+        console.error('Error fetching city name data:', error);
+      }
+
+    }
+
+  </script>
+
 </head>
-<body>   
+
+<body>
   <main>
     <div class="left-container">
       <div class="logo">
@@ -15,22 +71,22 @@
 
       <div class="info-block-container">
         <div class="info-left">
-          <p class="degree">16°</p>
+          <p class="degree" id="degree">16°</p>
           <div class="town-date">
-            <p class="town">London</p>
+            <p class="town" id="town">London</p>
             <p class="date">06:09 - Monday, 9 Sep '23</p>
           </div>
-          <img class="image-cloud" src="images/Cloudy.svg">
+          <img class="image-cloud" src="images/Cloudy.svg" id="large-icon">
         </div>
       </div>
     </div>
 
     <div class="right-container">
 
-      <div class="search-bar">
-        <input type="text" class="input-button" placeholder="Search Location..."> 
-        <img src="images/fa_search.png" class="search-icon" alt="Search">
-      </div>
+      <form class="search-bar">
+        <input type="text" class="input-button" placeholder="Search Location..." id="cityInput">
+        <img src="images/fa_search.png" class="search-icon" alt="Search" onclick="getWeather()">
+      </form>
 
 
       <p class="weather-details">Weather Details...</p>
@@ -38,41 +94,41 @@
       <div class="weather-container">
         <p class="large-text">THUNDERSTORM WITH LIGHT DRIZZLE</p>
 
-          <div class="weather-info">
-            <p class="small-text">Temp max</p>
-            <div class="degree-img">
-              <p class="info-style">19°</p>
-              <img class="weather-images" src="images/temp max.svg">
-            </div>
+        <div class="weather-info">
+          <p class="small-text">Temp max</p>
+          <div class="degree-img">
+            <p class="info-style" id="tempMax">19°</p>
+            <img class="weather-images" src="images/temp max.svg">
           </div>
-          <div class="weather-info">
-            <p class="small-text">Temp min</p>
-            <div class="degree-img">
-              <p class="info-style">15°</p>
-              <img class="weather-images" src="images/temp-min.svg">
-            </div>
+        </div>
+        <div class="weather-info">
+          <p class="small-text">Temp min</p>
+          <div class="degree-img">
+            <p class="info-style" id="tempMin">15°</p>
+            <img class="weather-images" src="images/temp-min.svg">
           </div>
-          <div class="weather-info">
-            <p class="small-text">Humadity</p>
-            <div class="degree-img">
-              <p class="info-style">58%</p>
-              <img class="weather-images" src="images/humadity.svg">
-            </div>
+        </div>
+        <div class="weather-info">
+          <p class="small-text">Humadity</p>
+          <div class="degree-img">
+            <p class="info-style" id="humadity">58%</p>
+            <img class="weather-images" src="images/humadity.svg">
           </div>
-          <div class="weather-info">
-            <p class="small-text">Cloudy</p>
-            <div class="degree-img">
-              <p class="info-style">86%</p>
-              <img class="weather-images" src="images/small-cloudy.svg">
-            </div>
+        </div>
+        <div class="weather-info">
+          <p class="small-text">Cloudy</p>
+          <div class="degree-img">
+            <p class="info-style" id="cloudy">86%</p>
+            <img class="weather-images" src="images/small-cloudy.svg">
           </div>
-          <div class="weather-info">
-            <p class="small-text">Wind</p>
-            <div class="degree-img">
-              <p class="info-style">5km/h</p>
-              <img class="weather-images" src="images/wind.svg">
-            </div>
+        </div>
+        <div class="weather-info">
+          <p class="small-text">Wind</p>
+          <div class="degree-img">
+            <p class="info-style" id="wind">5km/h</p>
+            <img class="weather-images" src="images/wind.svg">
           </div>
+        </div>
 
       </div>
 
@@ -80,17 +136,18 @@
 
       <div class="forecast">
         <div class="forecast-info">
-          <img src="images/Snowhite.svg">
+          <img src="images/Snowhite.svg" id="forecast-icon">
           <div class="forecast-time">
-            <p class="info-style">09:00</p>
-            <p class="small-text">Snow</p>
+            <p class="info-style" id="forecast-time">09:00</p>
+            <p class="small-text" id="forecast-text">Snow</p>
           </div>
         </div>
-        <p class="forecast-degree">19°</p>
+        <p class="forecast-degree" id="forecast-degree">19°</p>
       </div>
 
     </div>
 
   </main>
 </body>
+
 </html>
