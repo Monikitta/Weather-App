@@ -6,64 +6,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
-  <script>
-
-    async function getWeather(params) {
-
-      const apiKey = '12b1eb481bae9424d0d8f352708b1f64';
-      const currentCity = document.getElementById("town");
-      const currentTemp = document.getElementById("degree");
-      const currentTempMax = document.getElementById("tempMax");
-      const currentTempMin = document.getElementById("tempMin");
-      const currentHumidity = document.getElementById("humadity");
-      const currentClouds = document.getElementById("cloudy");
-      const currentWind = document.getElementById("wind");
-      const currentDescription = document.getElementById("forecast-text");
-      const currentWeatherIcon = document.getElementById("forecast-icon");
-      const currentforecastDegree = document.getElementById("forecast-degree");
-      const currentLargeIcon = document.getElementById("large-icon");
-
-      try {
-        const city = document.getElementById('cityInput').value.trim();
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-        const data = await response.json();
-      
-
-        const cityName = data.name;
-        const cityTemp = data.main.temp;
-        const cityTempMax = data.main.temp_max;
-        const cityTempMin = data.main.temp_min;
-        const cityHumidity = data.main.humidity;
-        const cityClouds = data.clouds.all;
-        const cityWind = data.wind.speed;
-        const weatherDescription = data.weather[0].main;
-        const weatherIconCode = data.weather[0].icon;
-
-        currentCity.textContent = cityName;
-        currentTemp.textContent = `${cityTemp}°`;
-        currentTempMax.textContent = `${cityTempMax}°`;
-        currentTempMin.textContent = `${cityTempMin}°`;
-        currentHumidity.textContent = `${cityHumidity}%`;
-        currentClouds.textContent = `${cityClouds}%`;
-        currentWind.textContent = `${cityWind}km/h`
-        currentDescription.textContent = `${weatherDescription}`;
-        currentWeatherIcon.src = `http://openweathermap.org/img/wn/${weatherIconCode}.png`;
-        currentforecastDegree.textContent = `${cityTemp}°`;
-        currentLargeIcon.src = `http://openweathermap.org/img/wn/${weatherIconCode}.png`;
-
-      } catch (error) {
-        console.error('Error fetching city name data:', error);
-      }
-
-    }
-
-  </script>
-
+  <link rel="stylesheet" href="localStorage.css">
 </head>
 
 <body>
   <main>
+    <div class="history-container hidden">
+      <button type="button" class="close-btn">X</button>
+      <h1>Weather History</h1>
+      <ul id="output" class="cities"></ul>
+    </div>
+
     <div class="left-container">
       <div class="logo">
         <img src="images/logo.png">
@@ -83,11 +36,12 @@
 
     <div class="right-container">
 
-      <form class="search-bar">
+      <form class="search-bar" id="form1">
         <input type="text" class="input-button" placeholder="Search Location..." id="cityInput">
-        <img src="images/fa_search.png" class="search-icon" alt="Search" onclick="getWeather()">
+        <img src="images/fa_search.png" class="search-icon" alt="Search">
       </form>
 
+      <button class="weather-history">Weather History</button>
 
       <p class="weather-details">Weather Details...</p>
 
@@ -144,10 +98,9 @@
         </div>
         <p class="forecast-degree" id="forecast-degree">19°</p>
       </div>
-
     </div>
-
   </main>
+  <script src="./script.js"></script>
 </body>
 
 </html>
